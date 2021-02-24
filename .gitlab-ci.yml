@@ -1,0 +1,26 @@
+# Build a Docker container according to the Dockerfile, and publish it to the Container Registry
+
+stages:
+  - build
+  - test
+
+docker-build:
+  # Use official docker image
+  image: docker:latest
+  stage: build
+  services:
+    - docker:dind
+  before_script:
+    - docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD" $CI_REGISTRY
+  script:
+    - docker build --pull -t "$CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG" .
+    - docker push "$CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG"
+  when: manual
+
+test:
+  image: registry.gitlab.com/pathway-development/docker/linux-cpp:$CI_COMMIT_REF_SLUG
+  stage: test
+  script:
+    - chmod +x testit.sh
+    - ./testit.sh
+  when: manual
