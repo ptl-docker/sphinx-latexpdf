@@ -18,7 +18,7 @@ docker-build:
   when: manual
 
 test:
-  image: registry.gitlab.com/pathway-development/docker/linux-cpp:$CI_COMMIT_REF_SLUG
+  image: registry.gitlab.com/pathway-development/docker/sphinx:$CI_COMMIT_REF_SLUG
   stage: test
   script:
     - chmod +x testit.sh
