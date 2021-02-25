@@ -25,3 +25,6 @@ test:
     - chmod +x testit.sh
     - ./testit.sh
   when: manual
+  artifacts:
+    paths:
+      - SphinxTest/_build/latex/myproject.pdf
