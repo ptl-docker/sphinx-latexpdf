@@ -5,4 +5,4 @@ FROM ubuntu:20.04
 RUN apt update && apt -y install python3-sphinx
 
 # Install TexLive
-RUN apt update && apt -y install texlive-latex-recommended
+RUN apt update && apt -y install texlive-latex-recommended latexmk
