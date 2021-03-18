@@ -13,6 +13,7 @@ make latexpdf
 
 #####TESTTEST
 find /usr/share -name *.sty
+which tlmgr
 #####TESTTEST
 
 # Artefacts
