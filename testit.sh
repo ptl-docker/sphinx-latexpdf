@@ -5,16 +5,16 @@ echo Test script for the sphinx-texlive docker container
 sphinx-build --version
 tex --version
 
+#####TESTTEST
+#find /usr/share -name *.sty
+tlmgr install fncychap
+#####TESTTEST
+
 # Make a simple Sphinx workspace and build for latex
 mkdir SphinxTest
 cd SphinxTest
 sphinx-quickstart -q -p MyProject -a Snoopy -v 0.1
 make latexpdf
-
-#####TESTTEST
-find /usr/share -name *.sty
-which tlmgr
-#####TESTTEST
 
 # Artefacts
 find . -name *.pdf
