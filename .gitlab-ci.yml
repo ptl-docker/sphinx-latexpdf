@@ -18,8 +18,8 @@ docker-build:
   when: manual
 
 test:
-  #image: registry.gitlab.com/pathway-development/docker/sphinx:$CI_COMMIT_REF_SLUG
-  image: sphinxdoc/sphinx-latexpdf:3.5.1
+  image: registry.gitlab.com/pathway-development/docker/sphinx:$CI_COMMIT_REF_SLUG
+  #image: sphinxdoc/sphinx-latexpdf:3.5.1
   stage: test
   script:
     - chmod +x testit.sh
