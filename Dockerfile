@@ -31,4 +31,4 @@ ENV INFOPATH "$INFOPATH:/usr/local/texlive/texmf-dist/doc/info"
 RUN tlmgr install latexmk
 
 # Tidy up
-RUN rm -rf /Temp && find / -name *.profile
+RUN rm -rf /Temp && cat /usr/local/texlive/tlpkg/texlive.profile
