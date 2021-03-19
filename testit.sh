@@ -5,11 +5,6 @@ echo Test script for the sphinx-latexpdf docker container
 sphinx-build --version
 tex --version
 
-# install missing packages
-tlmgr install fncychap tabulary latexmk ulem environ trimspaces titlesec \
-              varwidth framed threeparttable wrapfig upquote capt-of \
-              multirow eqparbox needspace
-
 # Make a simple Sphinx workspace and build for latex
 mkdir SphinxTest
 cd SphinxTest
