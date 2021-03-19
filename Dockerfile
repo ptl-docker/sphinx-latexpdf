@@ -5,9 +5,7 @@ FROM ubuntu:20.04
 # sphinx
 
 # Install sphinx
-#RUN apt update && apt -y install python3-sphinx
-RUN apt update && apt -y install python3 python3-pip && \
-    pip install -U sphinx
+RUN apt update && apt -y install python3-sphinx
 
 ##################################################
 # texlive
