@@ -5,14 +5,8 @@ echo Test script for the sphinx-latexpdf docker container
 sphinx-build --version
 tex --version
 
-#####TESTTEST
-#find /usr/share -name *.sty
-#export PATH=$PATH:/usr/local/texlive/bin/x86_64-linux
-which tlmgr
-#tlmgr init-usertree
-#tlmgr update --all
-tlmgr install fncychap
-#####TESTTEST
+# install missing packages
+tlmgr install fncychap titlesec
 
 # Make a simple Sphinx workspace and build for latex
 mkdir SphinxTest
