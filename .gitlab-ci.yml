@@ -29,4 +29,4 @@ test:
   when: manual
   artifacts:
     paths:
-      - SphinxTest/_build/latex/myproject.pdf
+      - SphinxTest/_build/latex/MyProject.pdf
