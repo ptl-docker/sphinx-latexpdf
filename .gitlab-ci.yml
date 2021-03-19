@@ -16,10 +16,12 @@ docker-build:
     - docker build --pull -t "$CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG" .
     - docker push "$CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG"
   when: manual
+  artifacts:
+    paths:
+      - /usr/local/texlive/tlpkg/texlive.profile
 
 test:
   image: registry.gitlab.com/pathway-development/docker/sphinx:$CI_COMMIT_REF_SLUG
-  #image: sphinxdoc/sphinx-latexpdf:3.5.1
   stage: test
   script:
     - chmod +x testit.sh
