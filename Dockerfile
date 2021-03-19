@@ -1,6 +1,9 @@
 # Based on the official Ubuntu 20.04 LTS image
 FROM ubuntu:20.04
 
+#####TEST
+RUN pwd && ls -la
+
 # Install sphinx
 RUN apt update && apt -y install python3-sphinx
 
