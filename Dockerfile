@@ -27,8 +27,11 @@ ENV PATH "$PATH:/usr/local/texlive/bin/x86_64-linux"
 ENV MANPATH "$MANPATH:/usr/local/texlive/texmf-dist/doc/man"
 ENV INFOPATH "$INFOPATH:/usr/local/texlive/texmf-dist/doc/info"
 
-# Additional required texlive packages
-RUN tlmgr install latexmk
+# Additional additional required texlive packages
+RUN tlmgr install latexmk fncychap tabulary latexmk ulem environ trimspaces titlesec \
+                  varwidth framed threeparttable wrapfig upquote capt-of \
+                  multirow eqparbox needspace
+
 
 # Tidy up
 RUN rm -rf /Temp && cat /usr/local/texlive/tlpkg/texlive.profile
