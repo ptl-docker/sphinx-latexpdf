@@ -9,6 +9,7 @@ tex --version
 
 #####TESTTEST
 #find /usr/share -name *.sty
+export PATH=$PATH:/usr/local/texlive/bin/x86_64-linux
 which tlmgr
 #tlmgr init-usertree
 #tlmgr update --all
