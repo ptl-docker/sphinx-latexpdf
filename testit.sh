@@ -1,5 +1,5 @@
 #!/bin/bash
-echo Test script for the sphinx-texlive docker container
+echo Test script for the sphinx-latexpdf docker container
 
 set -x
 
