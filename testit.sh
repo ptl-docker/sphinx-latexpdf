@@ -1,12 +1,15 @@
 #!/bin/bash
 echo Test script for the sphinx-texlive docker container
 
+set -x
+
 # Get installed version numbers
 sphinx-build --version
 tex --version
 
 #####TESTTEST
 #find /usr/share -name *.sty
+apt-get install -y wget
 find /usr/share -name update-tlmgr-latest
 update-tlmgr-latest.sh --update
 tlmgr init-usertree
