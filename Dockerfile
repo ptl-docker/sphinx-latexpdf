@@ -2,7 +2,7 @@
 FROM ubuntu:20.04
 
 #####TEST
-RUN pwd && ls -la
+RUN ls -la /home && ls -la /root
 
 # Install sphinx
 RUN apt update && apt -y install python3-sphinx
