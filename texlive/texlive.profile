@@ -1,4 +1,4 @@
-selected_scheme scheme-small
+selected_scheme scheme-basic
 TEXDIR /usr/local/texlive
 TEXMFCONFIG ~/.texlive/texmf-config
 TEXMFHOME ~/texmf
@@ -6,3 +6,10 @@ TEXMFLOCAL /usr/local/texlive/texmf-local
 TEXMFSYSCONFIG /usr/local/texlive/texmf-config
 TEXMFSYSVAR /usr/local/texlive/texmf-var
 TEXMFVAR ~/.texlive/texmf-var
+collection-basic 1
+collection-fontsrecommended 1
+collection-latex 1
+collection-latexrecommended 1
+collection-xetex 1
+option_doc 0
+option_src 0
