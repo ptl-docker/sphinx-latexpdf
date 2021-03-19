@@ -6,7 +6,7 @@ sphinx-build --version
 tex --version
 
 # install missing packages
-tlmgr install fncychap titlesec tabulary varwidth
+tlmgr install fncychap titlesec tabulary varwidth framed
 
 # Make a simple Sphinx workspace and build for latex
 mkdir SphinxTest
