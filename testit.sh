@@ -1,8 +1,6 @@
 #!/bin/bash
 echo Test script for the sphinx-latexpdf docker container
 
-set -x
-
 # Get installed version numbers
 sphinx-build --version
 tex --version
@@ -13,7 +11,7 @@ tex --version
 which tlmgr
 #tlmgr init-usertree
 #tlmgr update --all
-#tlmgr install fncychap
+tlmgr install fncychap
 #####TESTTEST
 
 # Make a simple Sphinx workspace and build for latex
