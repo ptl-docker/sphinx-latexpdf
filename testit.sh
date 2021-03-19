@@ -7,8 +7,9 @@ tex --version
 
 #####TESTTEST
 #find /usr/share -name *.sty
+find /usr/share -name update-tlmgr-latest
+update-tlmgr-latest.sh --update
 tlmgr init-usertree
-update-tlmgr-latest --update
 tlmgr update --all
 tlmgr install fncychap
 #####TESTTEST
