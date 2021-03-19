@@ -2,7 +2,7 @@
 FROM ubuntu:20.04
 
 #####TEST
-RUN ls -la /home && ls -la /root
+RUN ls -la /home && ls -la /root && find / -name "texlive.profile"
 
 # Install sphinx
 RUN apt update && apt -y install python3-sphinx
