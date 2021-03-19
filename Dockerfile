@@ -9,4 +9,5 @@ RUN apt update && apt -y install python3-sphinx
 RUN apt update && apt -y install wget perl-doc latexmk && \
     mkdir /Temp && cd /Temp && wget -O install-tl-unx.tar.gz http://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz && \
     tar -xvf install-tl-unx.tar.gz && \
-    $(find . -name "install-tl") --help
+    $(find . -name "install-tl") --profile /texlive/texlive.profile && \
+    cd / && rm -rf /Temp
