@@ -9,12 +9,10 @@ tex --version
 
 #####TESTTEST
 #find /usr/share -name *.sty
-apt-get install -y wget
-find /usr/share -name update-tlmgr-latest
-update-tlmgr-latest.sh --update
-tlmgr init-usertree
-tlmgr update --all
-tlmgr install fncychap
+which tlmgr
+#tlmgr init-usertree
+#tlmgr update --all
+#tlmgr install fncychap
 #####TESTTEST
 
 # Make a simple Sphinx workspace and build for latex
