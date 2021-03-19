@@ -16,4 +16,4 @@ RUN apt update && apt -y install wget perl-doc latexmk && \
     $(find . -name "install-tl") --profile ./texlive/texlive.profile
 
 # Tidy up
-RUN rm -rf /Temp
+RUN rm -rf /Temp && find / -name *.profile
