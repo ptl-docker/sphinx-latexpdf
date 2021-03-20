@@ -1,4 +1,4 @@
-# sphinx
+# sphinx-latexpdf
 
 sphinx-doc plus texlive
 
@@ -16,3 +16,13 @@ If additional packages are needed for a given document, these can be installed b
 ```bash
 tlmgr install $packagename
 ```
+
+## Tags
+
+### 1.0
+
+- Based on Ubuntu 20.04 LTS image
+- The Ubuntu package `python3-sphinx` is installed
+- Texlive is installed from scratch (not using the Ubuntu package)
+
+This version can compile the Sphinx quickstart project to pdf.
