@@ -33,6 +33,7 @@ test:
     - sphinx-quickstart -q -p MyProject -a Snoopy -v 0.1
     - make latexpdf
     ####TESTTEST
+    - cd ..
     - DISPLAY= inkscape image.svg --export-pdf=image.pdf
     - inkscape image.svg --export-pdf=image.pdf
   when: manual
