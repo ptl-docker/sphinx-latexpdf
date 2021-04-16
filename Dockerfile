@@ -32,6 +32,7 @@ RUN tlmgr install latexmk fncychap tabulary latexmk ulem environ trimspaces titl
                   varwidth framed threeparttable wrapfig upquote capt-of \
                   multirow eqparbox needspace
 
-
+##################################################
 # Tidy up
-RUN rm -rf /Temp && cat /usr/local/texlive/tlpkg/texlive.profile
+RUN rm -rf /Temp && \
+    cat /usr/local/texlive/tlpkg/texlive.profile

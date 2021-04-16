@@ -22,7 +22,7 @@ test:
   stage: test
   before_script:
     # Install additional required software
-    - apt update && apt -y install inkscape
+    - apt update && apt -y install inkscape python3-pip
     - pip install sphinxcontrib-svg2pdfconverter
   script:
     # Get installed version numbers
