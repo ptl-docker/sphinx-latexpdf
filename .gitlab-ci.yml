@@ -20,9 +20,6 @@ test:
   #image: registry.gitlab.com/ptl-development/docker/sphinx-latexpdf:$CI_COMMIT_REF_SLUG
   image: $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG
   stage: test
-  before_script:
-    # Add extra packages to handle svg files (these must be converted to pdf)
-    - apt update && apt -y install inkscape
   script:
     # Get installed version numbers
     - sphinx-build --version
@@ -32,12 +29,7 @@ test:
     - cd SphinxTest
     - sphinx-quickstart -q -p MyProject -a Snoopy -v 0.1
     - make latexpdf
-    ####TESTTEST
-    - cd ..
-    - DISPLAY= inkscape image.svg --export-pdf=image.pdf
-    - inkscape image.svg --export-pdf=image.pdf
   when: manual
   artifacts:
     paths:
       - SphinxTest/_build/latex/MyProject.pdf
-      - image.pdf
