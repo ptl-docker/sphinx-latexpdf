@@ -10,9 +10,8 @@ docker-build:
   stage: build
   services:
     - docker:dind
-  before_script:
-    - docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD" $CI_REGISTRY
   script:
+    - docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD" $CI_REGISTRY
     - docker build --pull -t "$CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG" .
     - docker push "$CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG"
   when: manual
@@ -20,10 +19,23 @@ docker-build:
 test:
   image: registry.gitlab.com/pathway-development/docker/sphinx-latexpdf:$CI_COMMIT_REF_SLUG
   stage: test
+  before_script:
+    # Add extra packages to handle svg files (these must be converted to pdf)
+    - apt update && apt -y install inkscape
   script:
-    - chmod +x testit.sh
-    - ./testit.sh
+    # Get installed version numbers
+    - sphinx-build --version
+    - tex --version
+    # Make a simple Sphinx workspace and build for latex
+    - mkdir SphinxTest
+    - cd SphinxTest
+    - sphinx-quickstart -q -p MyProject -a Snoopy -v 0.1
+    - make latexpdf
+    ####TESTTEST
+    - DISPLAY= inkscape image.svg --export-pdf=image.pdf
+    - inkscape image.svg --export-pdf=image.pdf
   when: manual
   artifacts:
     paths:
       - SphinxTest/_build/latex/MyProject.pdf
+      - image.pdf
