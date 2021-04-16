@@ -28,12 +28,10 @@ test:
     # Get installed version numbers
     - sphinx-build --version
     - tex --version
-    # Make a simple Sphinx workspace and build for latex
-    - mkdir SphinxTest
-    - cd SphinxTest
-    - sphinx-quickstart -q -p MyProject -a Snoopy -v 0.1
+    # Build the Sphinx project for latexpdf
+    - cd testdoc
     - make latexpdf
   when: manual
   artifacts:
     paths:
-      - SphinxTest/_build/latex/MyProject.pdf
+      - testdoc/_build/latex/testdoc.pdf
