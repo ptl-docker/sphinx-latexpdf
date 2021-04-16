@@ -20,6 +20,10 @@ test:
   #image: registry.gitlab.com/ptl-development/docker/sphinx-latexpdf:$CI_COMMIT_REF_SLUG
   image: $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG
   stage: test
+  before_script:
+    # Install additional required software
+    - apt update && apt -y install inkscape
+    - pip install sphinxcontrib-svg2pdfconverter
   script:
     # Get installed version numbers
     - sphinx-build --version
