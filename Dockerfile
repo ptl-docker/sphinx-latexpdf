@@ -5,8 +5,8 @@ FROM ubuntu:20.04
 # sphinx
 
 # Install sphinx
+# tzdata asks interactively for timezone information so is installed separately
 RUN apt update && \
-    tzdata asks interactively for timezone information && \
     DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends tzdata && \
     apt -y install python3-pip && \
     pip3 install sphinx
