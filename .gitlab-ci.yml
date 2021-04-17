@@ -22,7 +22,10 @@ test:
   stage: test
   before_script:
     # Install additional required software
-    - apt update && apt -y install inkscape python3-pip
+    - apt update
+    # tzdata asks interactively for timezone information
+    - DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends tzdata
+    - apt -y install inkscape python3-pip
     - pip3 install sphinx
     - pip3 install sphinxcontrib-svg2pdfconverter
   script:
