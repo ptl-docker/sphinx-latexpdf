@@ -46,4 +46,5 @@ RUN tlmgr install latexmk fncychap tabulary latexmk ulem environ trimspaces titl
 RUN rm -rf /Temp && \
     cat /usr/local/texlive/tlpkg/texlive.profile && \
     sphinx-build --version && \
-    tex --version
+    tex --version && \
+    inkscape --version
