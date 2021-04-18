@@ -6,7 +6,6 @@ stages:
   - test
 
 build-GitLab:
-  # Use official docker image
   image: docker:latest
   stage: build-GitLab
   services:
@@ -18,12 +17,12 @@ build-GitLab:
   when: manual
 
 build-DockerHub:
-  # Use official docker image
   image: docker:latest
   stage: build-DockerHub
   services:
     - docker:dind
   script:
+    - docker login -u "$PTL_DOCKERHUB_USER" -p "$PTL_DOCKERHUB_PASSWORD" hub.docker.com
     - docker build --pull -t "pathwaytechnologies/sphinx-latexpdf:$CI_COMMIT_REF_SLUG" .
     - docker push "pathwaytechnologies/sphinx-latexpdf:$CI_COMMIT_REF_SLUG"
   when: manual
