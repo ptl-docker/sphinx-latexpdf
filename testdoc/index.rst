@@ -6,4 +6,4 @@ Part 6 Compliance Detailed Report for |project_name| Package
    :maxdepth: 2
    :caption: Contents:
 
-   chapterASSETS
+   _assets/chapterASSETS
